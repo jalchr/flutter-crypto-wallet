@@ -5,7 +5,7 @@ class RoundButton extends StatelessWidget {
   const RoundButton(
       {Key? key,
       VoidCallback? onTap,
-      color = const Color(0XFFF3A00FF),
+      Color color = const Color(0XFFF3A00FF),
       required String text})
       : _onTap = onTap,
         _color = color,

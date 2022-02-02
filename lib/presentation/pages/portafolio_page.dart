@@ -5,7 +5,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
-class PortafolioPage extends StatelessWidget {
+class PortafolioPage extends ConsumerWidget  {
   const PortafolioPage(
       {Key? key,
       required this.coins,
@@ -20,7 +20,7 @@ class PortafolioPage extends StatelessWidget {
   final bool isPortafolio;
 
   @override
-  Widget build(BuildContext context) {
+  Widget build(BuildContext context, WidgetRef ref) {
     return Scaffold(
       appBar: AppBar(
         backgroundColor: Colors.white,
@@ -52,11 +52,11 @@ class PortafolioPage extends StatelessWidget {
               child: CoinItem(
                 onTap: () {
                   if (isPortafolio) {
-                    context
+                    ref
                         .read(coinConvertNotifierProvider.notifier)
                         .fromChanged(coins[index]);
                   } else {
-                    context
+                    ref
                         .read(coinConvertNotifierProvider.notifier)
                         .toChanged(coins[index]);
                   }

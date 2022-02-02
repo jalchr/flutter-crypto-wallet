@@ -1,5 +1,6 @@
+// coverage:ignore-file
 // GENERATED CODE - DO NOT MODIFY BY HAND
-// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides
+// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target
 
 part of 'coin.dart';
 
@@ -225,10 +226,10 @@ class _$_Coin implements _Coin {
   final double currentPrice;
   @override
   final double priceChange;
-  @JsonKey(defaultValue: 0.0)
+  @JsonKey()
   @override
   final double? amount;
-  @JsonKey(defaultValue: 0.0)
+  @JsonKey()
   @override
   final double? dollars;
 
@@ -240,38 +241,31 @@ class _$_Coin implements _Coin {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other is _Coin &&
-            (identical(other.id, id) ||
-                const DeepCollectionEquality().equals(other.id, id)) &&
-            (identical(other.name, name) ||
-                const DeepCollectionEquality().equals(other.name, name)) &&
-            (identical(other.symbol, symbol) ||
-                const DeepCollectionEquality().equals(other.symbol, symbol)) &&
-            (identical(other.image, image) ||
-                const DeepCollectionEquality().equals(other.image, image)) &&
-            (identical(other.currentPrice, currentPrice) ||
-                const DeepCollectionEquality()
-                    .equals(other.currentPrice, currentPrice)) &&
-            (identical(other.priceChange, priceChange) ||
-                const DeepCollectionEquality()
-                    .equals(other.priceChange, priceChange)) &&
-            (identical(other.amount, amount) ||
-                const DeepCollectionEquality().equals(other.amount, amount)) &&
-            (identical(other.dollars, dollars) ||
-                const DeepCollectionEquality().equals(other.dollars, dollars)));
+        (other.runtimeType == runtimeType &&
+            other is _Coin &&
+            const DeepCollectionEquality().equals(other.id, id) &&
+            const DeepCollectionEquality().equals(other.name, name) &&
+            const DeepCollectionEquality().equals(other.symbol, symbol) &&
+            const DeepCollectionEquality().equals(other.image, image) &&
+            const DeepCollectionEquality()
+                .equals(other.currentPrice, currentPrice) &&
+            const DeepCollectionEquality()
+                .equals(other.priceChange, priceChange) &&
+            const DeepCollectionEquality().equals(other.amount, amount) &&
+            const DeepCollectionEquality().equals(other.dollars, dollars));
   }
 
   @override
-  int get hashCode =>
-      runtimeType.hashCode ^
-      const DeepCollectionEquality().hash(id) ^
-      const DeepCollectionEquality().hash(name) ^
-      const DeepCollectionEquality().hash(symbol) ^
-      const DeepCollectionEquality().hash(image) ^
-      const DeepCollectionEquality().hash(currentPrice) ^
-      const DeepCollectionEquality().hash(priceChange) ^
-      const DeepCollectionEquality().hash(amount) ^
-      const DeepCollectionEquality().hash(dollars);
+  int get hashCode => Object.hash(
+      runtimeType,
+      const DeepCollectionEquality().hash(id),
+      const DeepCollectionEquality().hash(name),
+      const DeepCollectionEquality().hash(symbol),
+      const DeepCollectionEquality().hash(image),
+      const DeepCollectionEquality().hash(currentPrice),
+      const DeepCollectionEquality().hash(priceChange),
+      const DeepCollectionEquality().hash(amount),
+      const DeepCollectionEquality().hash(dollars));
 
   @JsonKey(ignore: true)
   @override
@@ -291,21 +285,21 @@ abstract class _Coin implements Coin {
       double? dollars}) = _$_Coin;
 
   @override
-  String get id => throw _privateConstructorUsedError;
+  String get id;
   @override
-  String get name => throw _privateConstructorUsedError;
+  String get name;
   @override
-  String get symbol => throw _privateConstructorUsedError;
+  String get symbol;
   @override
-  String get image => throw _privateConstructorUsedError;
+  String get image;
   @override
-  double get currentPrice => throw _privateConstructorUsedError;
+  double get currentPrice;
   @override
-  double get priceChange => throw _privateConstructorUsedError;
+  double get priceChange;
   @override
-  double? get amount => throw _privateConstructorUsedError;
+  double? get amount;
   @override
-  double? get dollars => throw _privateConstructorUsedError;
+  double? get dollars;
   @override
   @JsonKey(ignore: true)
   _$CoinCopyWith<_Coin> get copyWith => throw _privateConstructorUsedError;

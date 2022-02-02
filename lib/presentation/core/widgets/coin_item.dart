@@ -7,7 +7,7 @@ import 'image_coin.dart';
 
 class CoinItem extends StatelessWidget {
   const CoinItem(
-      {Key? key, required Coin coin, isPortafolio = false, VoidCallback? onTap})
+      {Key? key, required Coin coin, bool isPortafolio = false, VoidCallback? onTap})
       : _coin = coin,
         _onTap = onTap,
         _isPortafolio = isPortafolio,

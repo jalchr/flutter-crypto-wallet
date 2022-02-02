@@ -15,8 +15,8 @@ class ConfirmationPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Consumer(
-      builder: (context, watch, child) {
-        final state = watch(coinConvertNotifierProvider);
+      builder: (context, ref, child) {
+        final state = ref.watch(coinConvertNotifierProvider);
         return Scaffold(
           appBar: AppBar(
             backgroundColor: Colors.white,
@@ -93,7 +93,7 @@ class ConfirmationPage extends StatelessWidget {
                   RoundButton(
                     text: 'Convertir ahora',
                     onTap: () {
-                      context.read(coinConvertNotifierProvider.notifier).save();
+                      ref.read(coinConvertNotifierProvider.notifier).save();
                       context.router.replace(const StatusRoute());
                     },
                   ),

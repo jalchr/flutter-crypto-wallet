@@ -1,5 +1,6 @@
+// coverage:ignore-file
 // GENERATED CODE - DO NOT MODIFY BY HAND
-// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides
+// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target
 
 part of 'coin_dto.dart';
 
@@ -39,7 +40,7 @@ class _$CoinDtoTearOff {
     );
   }
 
-  CoinDto fromJson(Map<String, Object> json) {
+  CoinDto fromJson(Map<String, Object?> json) {
     return CoinDto.fromJson(json);
   }
 }
@@ -196,7 +197,7 @@ class _$_CoinDto extends _CoinDto {
       : super._();
 
   factory _$_CoinDto.fromJson(Map<String, dynamic> json) =>
-      _$_$_CoinDtoFromJson(json);
+      _$$_CoinDtoFromJson(json);
 
   @override
   final String id;
@@ -221,32 +222,27 @@ class _$_CoinDto extends _CoinDto {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other is _CoinDto &&
-            (identical(other.id, id) ||
-                const DeepCollectionEquality().equals(other.id, id)) &&
-            (identical(other.name, name) ||
-                const DeepCollectionEquality().equals(other.name, name)) &&
-            (identical(other.symbol, symbol) ||
-                const DeepCollectionEquality().equals(other.symbol, symbol)) &&
-            (identical(other.image, image) ||
-                const DeepCollectionEquality().equals(other.image, image)) &&
-            (identical(other.currentPrice, currentPrice) ||
-                const DeepCollectionEquality()
-                    .equals(other.currentPrice, currentPrice)) &&
-            (identical(other.priceChange, priceChange) ||
-                const DeepCollectionEquality()
-                    .equals(other.priceChange, priceChange)));
+        (other.runtimeType == runtimeType &&
+            other is _CoinDto &&
+            const DeepCollectionEquality().equals(other.id, id) &&
+            const DeepCollectionEquality().equals(other.name, name) &&
+            const DeepCollectionEquality().equals(other.symbol, symbol) &&
+            const DeepCollectionEquality().equals(other.image, image) &&
+            const DeepCollectionEquality()
+                .equals(other.currentPrice, currentPrice) &&
+            const DeepCollectionEquality()
+                .equals(other.priceChange, priceChange));
   }
 
   @override
-  int get hashCode =>
-      runtimeType.hashCode ^
-      const DeepCollectionEquality().hash(id) ^
-      const DeepCollectionEquality().hash(name) ^
-      const DeepCollectionEquality().hash(symbol) ^
-      const DeepCollectionEquality().hash(image) ^
-      const DeepCollectionEquality().hash(currentPrice) ^
-      const DeepCollectionEquality().hash(priceChange);
+  int get hashCode => Object.hash(
+      runtimeType,
+      const DeepCollectionEquality().hash(id),
+      const DeepCollectionEquality().hash(name),
+      const DeepCollectionEquality().hash(symbol),
+      const DeepCollectionEquality().hash(image),
+      const DeepCollectionEquality().hash(currentPrice),
+      const DeepCollectionEquality().hash(priceChange));
 
   @JsonKey(ignore: true)
   @override
@@ -255,7 +251,7 @@ class _$_CoinDto extends _CoinDto {
 
   @override
   Map<String, dynamic> toJson() {
-    return _$_$_CoinDtoToJson(this);
+    return _$$_CoinDtoToJson(this);
   }
 }
 
@@ -274,19 +270,19 @@ abstract class _CoinDto extends CoinDto {
   factory _CoinDto.fromJson(Map<String, dynamic> json) = _$_CoinDto.fromJson;
 
   @override
-  String get id => throw _privateConstructorUsedError;
+  String get id;
   @override
-  String get name => throw _privateConstructorUsedError;
+  String get name;
   @override
-  String get symbol => throw _privateConstructorUsedError;
+  String get symbol;
   @override
-  String get image => throw _privateConstructorUsedError;
+  String get image;
   @override
   @JsonKey(name: 'current_price')
-  double get currentPrice => throw _privateConstructorUsedError;
+  double get currentPrice;
   @override
   @JsonKey(name: 'price_change_percentage_24h')
-  double get priceChange => throw _privateConstructorUsedError;
+  double get priceChange;
   @override
   @JsonKey(ignore: true)
   _$CoinDtoCopyWith<_CoinDto> get copyWith =>

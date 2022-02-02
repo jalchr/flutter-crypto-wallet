@@ -10,10 +10,11 @@ class CoingeckoApi {
         // ignore: lines_longer_than_80_chars
         'bitcoin,ethereum,tether,cardano,binancecoin,ripple,dogecoin,usd-coin,polkadot,internet-computer,uniswap';
     final response = await http.get(Uri.https(
-        _api, '/api/v3/coins/markets', {'vs_currency': 'usd', 'ids': list}));
+        _api, '/api/v3/coins/markets', {'vs_currency': 'usd', 'ids': list},),);
     if (response.statusCode == 200) {
       // ignore: avoid_dynamic_calls
-      var parsed = jsonDecode(response.body).cast<Map<String, dynamic>>();
+      final List<Map<String, dynamic>> parsed = (json.decode(response.body) as List).cast();
+      // final parsed = jsonDecode(response.body).cast<Map<String, dynamic>>();
       return parsed;
     } else {
       throw Exception('Failed to load coins');

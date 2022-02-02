@@ -14,14 +14,14 @@ import '../../presentation/routes/router.gr.dart';
 
 import 'portafolio_page.dart';
 
-class ConvertPage extends StatefulWidget {
+class ConvertPage extends ConsumerStatefulWidget {
   const ConvertPage({Key? key}) : super(key: key);
 
   @override
   _ConvertPageState createState() => _ConvertPageState();
 }
 
-class _ConvertPageState extends State<ConvertPage> {
+class _ConvertPageState extends ConsumerState<ConvertPage> {
   final _color = const Color(0xfff3a00ff);
 
   late AnimationController animateController;
@@ -30,13 +30,13 @@ class _ConvertPageState extends State<ConvertPage> {
   Widget build(BuildContext context) {
     return ProviderListener<CoinConvertState>(
         provider: coinConvertNotifierProvider,
-        onChange: (context, state) {
+        onChange: (context, previous, state) {
           if (state.isPreview) {
             context.router.push(const ConfirmationRoute());
           }
         },
-        child: Consumer(builder: (context, watch, child) {
-          final state = watch(coinConvertNotifierProvider);
+        child: Consumer(builder: (context, ref, child) {
+          final state = ref.watch(coinConvertNotifierProvider);
           final msg1 = '${Utils.getPrice(state.from!.dollars!)} disponible';
           return state.isLoading
               ? Scaffold(
@@ -142,7 +142,7 @@ class _ConvertPageState extends State<ConvertPage> {
                           RoundButton(
                             text: 'Previsualizar Conversión',
                             onTap: () {
-                              context
+                              ref
                                   .read(coinConvertNotifierProvider.notifier)
                                   .validate();
                             },
@@ -156,14 +156,14 @@ class _ConvertPageState extends State<ConvertPage> {
   }
 }
 
-class _ExchangeCoin extends StatelessWidget {
+class _ExchangeCoin extends ConsumerWidget {
   const _ExchangeCoin({Key? key, required this.from, required this.to})
       : super(key: key);
 
   final Coin from, to;
 
   @override
-  Widget build(BuildContext context) {
+  Widget build(BuildContext context, WidgetRef ref) {
     return Container(
       decoration: BoxDecoration(
           color: Colors.white,
@@ -177,7 +177,7 @@ class _ExchangeCoin extends StatelessWidget {
         children: [
           InkWell(
             onTap: () {
-              final state = context.read(coinConvertNotifierProvider);
+              final state = ref.read(coinConvertNotifierProvider);
               Navigator.push(
                   context,
                   MaterialPageRoute(
@@ -228,7 +228,7 @@ class _ExchangeCoin extends StatelessWidget {
           ),
           InkWell(
             onTap: () {
-              final state = context.read(coinConvertNotifierProvider);
+              final state = ref.read(coinConvertNotifierProvider);
               Navigator.push(
                   context,
                   MaterialPageRoute(
@@ -298,11 +298,11 @@ class _CoinColum extends StatelessWidget {
   }
 }
 
-class _Keyboard extends StatelessWidget {
+class _Keyboard extends ConsumerWidget {
   const _Keyboard({Key? key}) : super(key: key);
 
   @override
-  Widget build(BuildContext context) {
+  Widget build(BuildContext context, WidgetRef ref) {
     return SizedBox(
       height: 400.h,
       child: Column(
@@ -331,7 +331,7 @@ class _Keyboard extends StatelessWidget {
                 Expanded(
                   child: InkWell(
                     onTap: () {
-                      context
+                      ref
                           .read(coinConvertNotifierProvider.notifier)
                           .onKeyboardTap('.');
                     },
@@ -346,7 +346,7 @@ class _Keyboard extends StatelessWidget {
                 Expanded(
                   child: InkWell(
                     onTap: () {
-                      context
+                      ref
                           .read(coinConvertNotifierProvider.notifier)
                           .onKeyboardTap('0');
                     },
@@ -366,7 +366,7 @@ class _Keyboard extends StatelessWidget {
                           color: Colors.black87,
                         ),
                         onPressed: () {
-                          context
+                          ref
                               .read(coinConvertNotifierProvider.notifier)
                               .onKeyboardDelete();
                         })),
@@ -379,20 +379,20 @@ class _Keyboard extends StatelessWidget {
   }
 }
 
-class _KeyboardRow extends StatelessWidget {
+class _KeyboardRow extends ConsumerWidget {
   const _KeyboardRow({Key? key, required this.start, required this.end})
       : super(key: key);
   final int start, end;
 
   @override
-  Widget build(BuildContext context) {
+  Widget build(BuildContext context, WidgetRef ref) {
     return Row(
       children: [
         for (var i = start; i <= end; i++)
           Expanded(
             child: InkWell(
               onTap: () {
-                context
+                ref
                     .read(coinConvertNotifierProvider.notifier)
                     .onKeyboardTap(i.toString());
               },

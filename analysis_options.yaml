@@ -7,6 +7,9 @@ analyzer:
     - "**/*.gr.dart"
     - "**/*.iconfig.dart"
     - "**/*.config.dart"
+  strong-mode:
+    implicit-casts: false
+    implicit-dynamic: true
     
 linter:
   rules:

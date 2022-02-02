@@ -1,5 +1,6 @@
+// coverage:ignore-file
 // GENERATED CODE - DO NOT MODIFY BY HAND
-// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides
+// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target
 
 part of 'coin_convert_notifier.dart';
 
@@ -37,6 +38,12 @@ mixin _$ValidationError {
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function()? empty,
+    TResult Function()? invalid,
+  }) =>
+      throw _privateConstructorUsedError;
+  @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? empty,
     TResult Function()? invalid,
@@ -47,6 +54,12 @@ mixin _$ValidationError {
   TResult map<TResult extends Object?>({
     required TResult Function(Empty value) empty,
     required TResult Function(Invalid value) invalid,
+  }) =>
+      throw _privateConstructorUsedError;
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(Empty value)? empty,
+    TResult Function(Invalid value)? invalid,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -103,7 +116,8 @@ class _$Empty implements Empty {
 
   @override
   bool operator ==(dynamic other) {
-    return identical(this, other) || (other is Empty);
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType && other is Empty);
   }
 
   @override
@@ -116,6 +130,15 @@ class _$Empty implements Empty {
     required TResult Function() invalid,
   }) {
     return empty();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function()? empty,
+    TResult Function()? invalid,
+  }) {
+    return empty?.call();
   }
 
   @override
@@ -138,6 +161,15 @@ class _$Empty implements Empty {
     required TResult Function(Invalid value) invalid,
   }) {
     return empty(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(Empty value)? empty,
+    TResult Function(Invalid value)? invalid,
+  }) {
+    return empty?.call(this);
   }
 
   @override
@@ -186,7 +218,8 @@ class _$Invalid implements Invalid {
 
   @override
   bool operator ==(dynamic other) {
-    return identical(this, other) || (other is Invalid);
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType && other is Invalid);
   }
 
   @override
@@ -199,6 +232,15 @@ class _$Invalid implements Invalid {
     required TResult Function() invalid,
   }) {
     return invalid();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function()? empty,
+    TResult Function()? invalid,
+  }) {
+    return invalid?.call();
   }
 
   @override
@@ -221,6 +263,15 @@ class _$Invalid implements Invalid {
     required TResult Function(Invalid value) invalid,
   }) {
     return invalid(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(Empty value)? empty,
+    TResult Function(Invalid value)? invalid,
+  }) {
+    return invalid?.call(this);
   }
 
   @override
@@ -542,50 +593,37 @@ class _$_CoinConvertState implements _CoinConvertState {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other is _CoinConvertState &&
-            (identical(other.from, from) ||
-                const DeepCollectionEquality().equals(other.from, from)) &&
-            (identical(other.to, to) ||
-                const DeepCollectionEquality().equals(other.to, to)) &&
-            (identical(other.all, all) ||
-                const DeepCollectionEquality().equals(other.all, all)) &&
-            (identical(other.portafolio, portafolio) ||
-                const DeepCollectionEquality()
-                    .equals(other.portafolio, portafolio)) &&
-            (identical(other.confirm, confirm) ||
-                const DeepCollectionEquality()
-                    .equals(other.confirm, confirm)) &&
-            (identical(other.amount, amount) ||
-                const DeepCollectionEquality().equals(other.amount, amount)) &&
-            (identical(other.isLoading, isLoading) ||
-                const DeepCollectionEquality()
-                    .equals(other.isLoading, isLoading)) &&
-            (identical(other.isPreview, isPreview) ||
-                const DeepCollectionEquality()
-                    .equals(other.isPreview, isPreview)) &&
-            (identical(other.validation, validation) ||
-                const DeepCollectionEquality()
-                    .equals(other.validation, validation)) &&
-            (identical(other.convertFailureOrSuccessOption,
-                    convertFailureOrSuccessOption) ||
-                const DeepCollectionEquality().equals(
-                    other.convertFailureOrSuccessOption,
-                    convertFailureOrSuccessOption)));
+        (other.runtimeType == runtimeType &&
+            other is _CoinConvertState &&
+            const DeepCollectionEquality().equals(other.from, from) &&
+            const DeepCollectionEquality().equals(other.to, to) &&
+            const DeepCollectionEquality().equals(other.all, all) &&
+            const DeepCollectionEquality()
+                .equals(other.portafolio, portafolio) &&
+            const DeepCollectionEquality().equals(other.confirm, confirm) &&
+            const DeepCollectionEquality().equals(other.amount, amount) &&
+            const DeepCollectionEquality().equals(other.isLoading, isLoading) &&
+            const DeepCollectionEquality().equals(other.isPreview, isPreview) &&
+            const DeepCollectionEquality()
+                .equals(other.validation, validation) &&
+            const DeepCollectionEquality().equals(
+                other.convertFailureOrSuccessOption,
+                convertFailureOrSuccessOption));
   }
 
   @override
-  int get hashCode =>
-      runtimeType.hashCode ^
-      const DeepCollectionEquality().hash(from) ^
-      const DeepCollectionEquality().hash(to) ^
-      const DeepCollectionEquality().hash(all) ^
-      const DeepCollectionEquality().hash(portafolio) ^
-      const DeepCollectionEquality().hash(confirm) ^
-      const DeepCollectionEquality().hash(amount) ^
-      const DeepCollectionEquality().hash(isLoading) ^
-      const DeepCollectionEquality().hash(isPreview) ^
-      const DeepCollectionEquality().hash(validation) ^
-      const DeepCollectionEquality().hash(convertFailureOrSuccessOption);
+  int get hashCode => Object.hash(
+      runtimeType,
+      const DeepCollectionEquality().hash(from),
+      const DeepCollectionEquality().hash(to),
+      const DeepCollectionEquality().hash(all),
+      const DeepCollectionEquality().hash(portafolio),
+      const DeepCollectionEquality().hash(confirm),
+      const DeepCollectionEquality().hash(amount),
+      const DeepCollectionEquality().hash(isLoading),
+      const DeepCollectionEquality().hash(isPreview),
+      const DeepCollectionEquality().hash(validation),
+      const DeepCollectionEquality().hash(convertFailureOrSuccessOption));
 
   @JsonKey(ignore: true)
   @override
@@ -608,26 +646,25 @@ abstract class _CoinConvertState implements CoinConvertState {
           convertFailureOrSuccessOption}) = _$_CoinConvertState;
 
   @override
-  Coin? get from => throw _privateConstructorUsedError;
+  Coin? get from;
   @override
-  Coin? get to => throw _privateConstructorUsedError;
+  Coin? get to;
   @override
-  List<Coin>? get all => throw _privateConstructorUsedError;
+  List<Coin>? get all;
   @override
-  List<Coin>? get portafolio => throw _privateConstructorUsedError;
+  List<Coin>? get portafolio;
   @override
-  ConfirmModel? get confirm => throw _privateConstructorUsedError;
+  ConfirmModel? get confirm;
   @override
-  String get amount => throw _privateConstructorUsedError;
+  String get amount;
   @override
-  bool get isLoading => throw _privateConstructorUsedError;
+  bool get isLoading;
   @override
-  bool get isPreview => throw _privateConstructorUsedError;
+  bool get isPreview;
   @override
-  Option<ValidationError> get validation => throw _privateConstructorUsedError;
+  Option<ValidationError> get validation;
   @override
-  Option<Either<CoinFailure, Unit>> get convertFailureOrSuccessOption =>
-      throw _privateConstructorUsedError;
+  Option<Either<CoinFailure, Unit>> get convertFailureOrSuccessOption;
   @override
   @JsonKey(ignore: true)
   _$CoinConvertStateCopyWith<_CoinConvertState> get copyWith =>

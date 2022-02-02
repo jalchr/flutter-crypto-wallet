@@ -1,5 +1,6 @@
+// coverage:ignore-file
 // GENERATED CODE - DO NOT MODIFY BY HAND
-// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides
+// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target
 
 part of 'coin_list_notifier.dart';
 
@@ -52,6 +53,14 @@ mixin _$CoinListState {
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function()? initial,
+    TResult Function()? loading,
+    TResult Function(List<Coin> coins, double totalDollars)? loaded,
+    TResult Function(CoinFailure failure)? failure,
+  }) =>
+      throw _privateConstructorUsedError;
+  @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? loading,
@@ -66,6 +75,14 @@ mixin _$CoinListState {
     required TResult Function(Loading value) loading,
     required TResult Function(Loaded value) loaded,
     required TResult Function(Failure value) failure,
+  }) =>
+      throw _privateConstructorUsedError;
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(_Initial value)? initial,
+    TResult Function(Loading value)? loading,
+    TResult Function(Loaded value)? loaded,
+    TResult Function(Failure value)? failure,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -124,7 +141,8 @@ class _$_Initial implements _Initial {
 
   @override
   bool operator ==(dynamic other) {
-    return identical(this, other) || (other is _Initial);
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType && other is _Initial);
   }
 
   @override
@@ -139,6 +157,17 @@ class _$_Initial implements _Initial {
     required TResult Function(CoinFailure failure) failure,
   }) {
     return initial();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function()? initial,
+    TResult Function()? loading,
+    TResult Function(List<Coin> coins, double totalDollars)? loaded,
+    TResult Function(CoinFailure failure)? failure,
+  }) {
+    return initial?.call();
   }
 
   @override
@@ -165,6 +194,17 @@ class _$_Initial implements _Initial {
     required TResult Function(Failure value) failure,
   }) {
     return initial(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(_Initial value)? initial,
+    TResult Function(Loading value)? loading,
+    TResult Function(Loaded value)? loaded,
+    TResult Function(Failure value)? failure,
+  }) {
+    return initial?.call(this);
   }
 
   @override
@@ -215,7 +255,8 @@ class _$Loading implements Loading {
 
   @override
   bool operator ==(dynamic other) {
-    return identical(this, other) || (other is Loading);
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType && other is Loading);
   }
 
   @override
@@ -230,6 +271,17 @@ class _$Loading implements Loading {
     required TResult Function(CoinFailure failure) failure,
   }) {
     return loading();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function()? initial,
+    TResult Function()? loading,
+    TResult Function(List<Coin> coins, double totalDollars)? loaded,
+    TResult Function(CoinFailure failure)? failure,
+  }) {
+    return loading?.call();
   }
 
   @override
@@ -256,6 +308,17 @@ class _$Loading implements Loading {
     required TResult Function(Failure value) failure,
   }) {
     return loading(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(_Initial value)? initial,
+    TResult Function(Loading value)? loading,
+    TResult Function(Loaded value)? loaded,
+    TResult Function(Failure value)? failure,
+  }) {
+    return loading?.call(this);
   }
 
   @override
@@ -330,19 +393,18 @@ class _$Loaded implements Loaded {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other is Loaded &&
-            (identical(other.coins, coins) ||
-                const DeepCollectionEquality().equals(other.coins, coins)) &&
-            (identical(other.totalDollars, totalDollars) ||
-                const DeepCollectionEquality()
-                    .equals(other.totalDollars, totalDollars)));
+        (other.runtimeType == runtimeType &&
+            other is Loaded &&
+            const DeepCollectionEquality().equals(other.coins, coins) &&
+            const DeepCollectionEquality()
+                .equals(other.totalDollars, totalDollars));
   }
 
   @override
-  int get hashCode =>
-      runtimeType.hashCode ^
-      const DeepCollectionEquality().hash(coins) ^
-      const DeepCollectionEquality().hash(totalDollars);
+  int get hashCode => Object.hash(
+      runtimeType,
+      const DeepCollectionEquality().hash(coins),
+      const DeepCollectionEquality().hash(totalDollars));
 
   @JsonKey(ignore: true)
   @override
@@ -358,6 +420,17 @@ class _$Loaded implements Loaded {
     required TResult Function(CoinFailure failure) failure,
   }) {
     return loaded(coins, totalDollars);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function()? initial,
+    TResult Function()? loading,
+    TResult Function(List<Coin> coins, double totalDollars)? loaded,
+    TResult Function(CoinFailure failure)? failure,
+  }) {
+    return loaded?.call(coins, totalDollars);
   }
 
   @override
@@ -388,6 +461,17 @@ class _$Loaded implements Loaded {
 
   @override
   @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(_Initial value)? initial,
+    TResult Function(Loading value)? loading,
+    TResult Function(Loaded value)? loaded,
+    TResult Function(Failure value)? failure,
+  }) {
+    return loaded?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_Initial value)? initial,
     TResult Function(Loading value)? loading,
@@ -405,8 +489,8 @@ class _$Loaded implements Loaded {
 abstract class Loaded implements CoinListState {
   const factory Loaded(List<Coin> coins, double totalDollars) = _$Loaded;
 
-  List<Coin> get coins => throw _privateConstructorUsedError;
-  double get totalDollars => throw _privateConstructorUsedError;
+  List<Coin> get coins;
+  double get totalDollars;
   @JsonKey(ignore: true)
   $LoadedCopyWith<Loaded> get copyWith => throw _privateConstructorUsedError;
 }
@@ -465,14 +549,14 @@ class _$Failure implements Failure {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other is Failure &&
-            (identical(other.failure, failure) ||
-                const DeepCollectionEquality().equals(other.failure, failure)));
+        (other.runtimeType == runtimeType &&
+            other is Failure &&
+            const DeepCollectionEquality().equals(other.failure, failure));
   }
 
   @override
   int get hashCode =>
-      runtimeType.hashCode ^ const DeepCollectionEquality().hash(failure);
+      Object.hash(runtimeType, const DeepCollectionEquality().hash(failure));
 
   @JsonKey(ignore: true)
   @override
@@ -488,6 +572,17 @@ class _$Failure implements Failure {
     required TResult Function(CoinFailure failure) failure,
   }) {
     return failure(this.failure);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function()? initial,
+    TResult Function()? loading,
+    TResult Function(List<Coin> coins, double totalDollars)? loaded,
+    TResult Function(CoinFailure failure)? failure,
+  }) {
+    return failure?.call(this.failure);
   }
 
   @override
@@ -518,6 +613,17 @@ class _$Failure implements Failure {
 
   @override
   @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(_Initial value)? initial,
+    TResult Function(Loading value)? loading,
+    TResult Function(Loaded value)? loaded,
+    TResult Function(Failure value)? failure,
+  }) {
+    return failure?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_Initial value)? initial,
     TResult Function(Loading value)? loading,
@@ -535,7 +641,7 @@ class _$Failure implements Failure {
 abstract class Failure implements CoinListState {
   const factory Failure(CoinFailure failure) = _$Failure;
 
-  CoinFailure get failure => throw _privateConstructorUsedError;
+  CoinFailure get failure;
   @JsonKey(ignore: true)
   $FailureCopyWith<Failure> get copyWith => throw _privateConstructorUsedError;
 }
