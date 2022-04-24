@@ -73,7 +73,7 @@ class __SuccessContentState extends State<_SuccessContent> {
                     color: Colors.white,
                     fontSize: 46.sp,
                     fontWeight: FontWeight.bold)),
-            firstChild: Text('Mi Portafolio',
+            firstChild: Text('Islami Wallet',
                 maxLines: 1,
                 textAlign: TextAlign.center,
                 style: TextStyle(
@@ -184,7 +184,7 @@ class _HeaderSection extends StatelessWidget {
                     crossAxisAlignment: CrossAxisAlignment.center,
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
-                      Text('En mi Billetera',
+                      Text('Balance',
                           style: TextStyle(
                               color: Colors.grey,
                               fontSize: 22.sp,
@@ -238,7 +238,7 @@ class _HeaderSection extends StatelessWidget {
                   SizedBox(
                     width: 10.w,
                   ),
-                  Text('Convertir',
+                  Text('Convert',
                       textAlign: TextAlign.center,
                       style: TextStyle(
                           color: const Color(0XFFF3A00FF),
